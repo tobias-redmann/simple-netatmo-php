@@ -20,10 +20,10 @@ For sure you need to download the lib from here.
 As I already mentioned you need an instance of a NAApiClient to use the libary. You can create a client one like this:
 
     $credentials = array(
-      'client_id'     = 'your_client_id';
-	  'client_secret' = 'your_client_secret';
-      'username'      = 'your_username';
-      'password'      = 'your_password';
+      'client_id'     => 'your_client_id',
+	    'client_secret' => 'your_client_secret',
+      'username'      => 'your_username',
+      'password'      => 'your_password'
     );
     
     $client = new NAApiClient($credentials);
