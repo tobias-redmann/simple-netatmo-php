@@ -9,12 +9,6 @@ $netatmo = new Netatmo($client);
 $my_device = $netatmo->getDeviceByName($my_device_name);
 
 
-// get the lastest measurements
-$latest_measurement = $my_device->getLatestMeasures();
-
-// get the temperature
-$temperature = $latest_measurement->get('temperature');
-
 
 
 
