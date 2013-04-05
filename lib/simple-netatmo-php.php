@@ -77,7 +77,7 @@ class Netatmo {
    * @param String $station_name
    * @return NetatmoDevice/boolean
    */
-  function getDeviceByName($station_name) {
+  function getDevice($station_name) {
     
     $devices = $this->getDevices();
         
@@ -124,6 +124,12 @@ class NetatmoDevice {
       $module->setDevice($this);
       
     }
+    
+  }
+  
+  function getModules() {
+    
+    return $this->modules;
     
   }
   
@@ -277,7 +283,7 @@ class NetatmoModule{
    * @param String $measures
    * @return Array
    */
-  function getMeasuresByDay($day = null, $measures = 'Temperature,CO2,Humidity,Pressure,Noise') {
+  function getMeasurementByDay($day = null, $measures = 'Temperature,CO2,Humidity,Pressure,Noise') {
     
     if ($day == null) $day = date('Y-m-d');
     
@@ -308,7 +314,7 @@ class NetatmoModule{
    * @param String $measures
    * @return NetatmoMeasurement
    */
-  function getLatestMeasures($measures = 'Temperature,CO2,Humidity,Pressure,Noise') {
+  function getLatestMeasurement($measures = 'Temperature,CO2,Humidity,Pressure,Noise') {
     
     $params = array(
       "scale" => "30min", 
