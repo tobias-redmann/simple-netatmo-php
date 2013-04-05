@@ -277,7 +277,9 @@ class NetatmoModule{
    * @param String $measures
    * @return Array
    */
-  function getMeasuresByDay($day, $measures = 'Temperature,CO2,Humidity,Pressure,Noise', $module = null) {
+  function getMeasuresByDay($day = null, $measures = 'Temperature,CO2,Humidity,Pressure,Noise') {
+    
+    if ($day == null) $day = date('Y-m-d');
     
     $params = array(
       "scale" => "30min", 
